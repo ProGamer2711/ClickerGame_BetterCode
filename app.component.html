@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clicker Game</title>
+</head>
+<body>
+  <h1>Welcome to Clicker Game!</h1><br>
+  <p>Welcome to my clicker game. You have a bussines where you sell space food. Your goal is to build a rocket and launch it into space. You may be asking how to do that... well you can get money by clicking a button. The money that you get you can use to upgrade or to build parts of the rocket. Good luck, have fun.</p>
+  <div id="div2">
+
+      <h2>Your money: {{money}} $</h2>
+
+      <p>Money per click: {{shop.ClickUpgrade.num}} $</p>
+      <p>Money per second: {{MPS}} $</p>
+
+      <button (click)="add()" id="moneyButton">Click for money!</button>
+
+  </div>
+
+  <div id="div3">
+  <p>Workers give you 5 $ per second. They cost {{shop.Worker.cost}} $. You currently have {{shop.Worker.num}} workers.</p>
+  <p>Click upgrades give you more money per click. They cost {{shop.ClickUpgrade.cost}} $. You currently have {{shop.ClickUpgrade.num}} click upgrades.</p>
+  <p>Shops give you 50 $ per second. They cost {{shop.Shop.cost}} $. You currently have {{shop.Shop.num}} shops.</p>
+  <p>Laboratories give you 150 $ per second. They cost {{shop.Laboratory.cost}} $. You currently have {{shop.Laboratory.num}} laboratories.</p>
+  <p>Warehouses give you 500 $ per second. They cost {{shop.Warehouse.cost}} $. You currently have {{shop.Warehouse.num}} warehouses.</p>
+  <p>Factories give you 1250 $ per second. They cost {{shop.Factory.cost}} $. You currently have {{shop.Factory.num}} factories.</p>
+  </div>
+
+  <div id="buyMenu">
+    <form>
+      <input type="radio" [(ngModel)]="buyWhat" value="Worker" name="buy">Worker<br>
+      <input type="radio" [(ngModel)]="buyWhat" value="ClickUpgrade" name="buy">Click upgrade<br>
+      <input type="radio" [(ngModel)]="buyWhat" value="Shop" name="buy">Shop<br>
+      <input type="radio" [(ngModel)]="buyWhat" value="Laboratory" name="buy">Laboratory<br>
+      <input type="radio" [(ngModel)]="buyWhat" value="Warehouse" name="buy">Warehouse<br>
+      <input type="radio" [(ngModel)]="buyWhat" value="Factory" name="buy">Factory<br>
+      <button (click)="buy()">Buy</button>
+    </form>
+
+  </div>
+
+
+  <p>To build you rocket you will need to buy parts for it. Here you can get them by paying with the money you have. 
+  You will need rocket fuel, fuel canisters, rocket engines, cockpit, platform for the rocket and control room on land.</p>
+  <div id="div1">
+      <label>Price: 70 000 $ </label><button  (click)="buyPart('PlatformForRocket', 70000)" id="PlatformForRocket">Buy platform for the rocket</button><br>
+      <label>Price: 50 000 $ </label><button  (click)="buyPart('RocketFuel', 50000)" id="RocketFuel">Buy rocket fuel</button><br>
+      <label>Price: 25 000 $ </label><button  (click)="this.buyPart('FuelCanisters', 25000)" id="FuelCanisters">Buy fuel canisters</button><br>
+      <label>Price: 125 000 $ </label><button (click)="this.buyPart('RocketEngines', 125000)" id="RocketEngines">Buy rocket engines</button><br>
+      <label>Price: 75 000 $ </label><button  (click)="this.buyPart('Cockpit', 75000)" id="Cockpit">Buy cockpit</button><br>
+      <label>Price: 65 000 $ </label><button  (click)="this.buyPart('ControlRoom', 65000)" id="ControlRoom">Buy control room</button><br>
+  </div>
+
+    <button (click)="launch()" id="launchButton">!!!LAUNCH!!!</button><br>
+    <br>
+    <h1 id="launchCountdown" style="display: none; margin: auto; text-align: center;">{{count}}</h1>
+    
+  <script>
+    setInterval({addShop}, 1000);
+  </script>
+</body>
+</html>

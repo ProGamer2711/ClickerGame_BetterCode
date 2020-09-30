@@ -1,0 +1,67 @@
+h1{
+    color: rgb(247, 255, 35);
+    margin: auto;
+    display: grid;
+    text-align: center;
+}
+
+label{
+    color: rgb(255, 255, 255);
+}
+
+body{
+    background: rgb(0,15,108);
+    background: linear-gradient(rgba(0,15,108,1) 0%, rgba(53,10,117,1) 35%, rgba(0,0,0,1) 100%);
+    color: rgb(255, 255, 255);
+    cursor: text;
+}
+
+.built{
+    background-color: #2d373b;
+    color: white;
+    border: 10px, rgba(43, 81, 242, 0.8), none;
+    border-style: none, none, none, solid;
+    cursor: not-allowed;
+}
+
+button{
+    cursor: pointer;
+    background-color: rgb(177, 96, 235);
+}
+
+#launchButton{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    border: 5px, black, solid;
+    padding: 50px;
+    border-radius: 100px;
+    letter-spacing: 5px;
+    float: none;
+    display: none;
+}
+
+#moneyButton{
+    background-color: rgb(103, 188, 216);
+    border-color: rgb(103, 188, 216);
+    padding: 10px;
+    font-size: 50px;
+    width: 80%;
+    margin: auto;
+    display: grid;
+    padding: 10px;
+    text-align: center;
+}
+
+#div1{
+    background-color: rgb(0, 0, 0);
+    float: right;
+    padding: 15px;
+}
+
+#div2{
+    padding: 10px;
+    margin: auto;
+    display: grid;
+    text-align: center;
+}
